@@ -13,7 +13,6 @@ func TestSet_New(t *testing.T) {
 	if s.Size() != 0 {
 		t.Error("New: calling without any parameters should create a set with zero size")
 	}
-
 }
 
 func TestSet_New_parameters(t *testing.T) {
@@ -212,7 +211,6 @@ func TestSet_IsSubset(t *testing.T) {
 	if ok {
 		t.Error("IsSubset: s is not a subset of u. However it returns true")
 	}
-
 }
 
 func TestSet_IsSuperset(t *testing.T) {
@@ -230,7 +228,6 @@ func TestSet_IsSuperset(t *testing.T) {
 	if ok {
 		t.Error("IsSuperset: u is not a superset of u. However it returns true")
 	}
-
 }
 
 func TestSet_String(t *testing.T) {

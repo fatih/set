@@ -33,7 +33,6 @@ and use `set` as the package name inside the code.
 #### Initialization of a new Set
 
 ```go
-
 // create a set with zero items
 s := set.New(set.ThreadSafe) // thread safe version
 s := set.New(set.NonThreadSafe) // non thread-safe version
@@ -51,7 +50,7 @@ s.Add("ankara", "san francisco", 3.14)
 
 // remove item
 s.Remove("frankfurt")
-s.Remove("frankfurt") // nothing happes if you remove a nonexisting item
+s.Remove("frankfurt") // nothing happens if you remove a nonexisting item
 
 // remove multiple items
 s.Remove("barcelona", 3.14, "ankara")
@@ -73,7 +72,6 @@ items := s.List()
 
 // string representation of set
 fmt.Printf("set is %s", s.String())
-
 ```
 
 #### Check Operations
@@ -92,7 +90,6 @@ s.Has("istanbul", "san francisco", 3.14)
 s := s.New("1", "2", "3", "4", "5")
 t := s.New("1", "2", "3")
 
-
 // check if they are the same
 if !s.IsEqual(t) {
     fmt.Println("s is not equal to t")
@@ -107,12 +104,9 @@ if s.IsSubset(t) {
 if t.IsSuperset(s) {
 	fmt.Println("s is a superset of t")
 }
-
-
 ```
 
 #### Set Operations
-
 
 ```go
 // let us initialize two sets with some values
@@ -136,7 +130,6 @@ c := set.Difference(a, b)
 // contains items which are in one of either, but not in both.
 // [frankfurt, ankara, san francisco]
 c := set.SymmetricDifference(a, b)
-
 ```
 
 ```go
@@ -145,7 +138,6 @@ a.Merge(b)
 
 // removes the set items which are in b from a and saves the result back into a.
 a.Separate(b)
-
 ```
 
 #### Multiple Set Operations
@@ -176,22 +168,18 @@ u := set.Intersection(a, b, c)
 The Slice functions below are a convenient way to extract or convert your Set data
 into basic data types.
 
-
 ```go
 // create a set of mixed types
 s := set.New(set.ThreadSafe)
 s := set.Add("ankara", "5", "8", "san francisco", 13, 21)
 
-
 // convert s into a slice of strings (type is []string)
 // [ankara 5 8 san francisco]
 t := set.StringSlice(s)
 
-
 // u contains a slice of ints (type is []int)
 // [13, 21]
 u := set.IntSlice(s)
-
 ```
 
 #### Concurrent safe usage
@@ -205,9 +193,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/fatih/set"
 	"strconv"
 	"sync"
+
+	"github.com/fatih/set"
 )
 
 func main() {
@@ -219,11 +208,13 @@ func main() {
 	// Add items concurrently (item1, item2, and so on)
 	for i := 0; i < 10; i++ {
 		wg.Add(1)
+
 		go func(i int) {
+			defer wg.Done()
+
 			item := "item" + strconv.Itoa(i)
 			fmt.Println("adding", item)
 			s.Add(item)
-			wg.Done()
 		}(i)
 	}
 
@@ -235,12 +226,11 @@ func main() {
 
 ## Credits
 
- * [Fatih Arslan](https://github.com/fatih)
- * [Arne Hormann](https://github.com/arnehormann)
- * [Sam Boyer](https://github.com/sdboyer)
- * [Ralph Loizzo](https://github.com/friartech)
+* [Fatih Arslan](https://github.com/fatih)
+* [Arne Hormann](https://github.com/arnehormann)
+* [Sam Boyer](https://github.com/sdboyer)
+* [Ralph Loizzo](https://github.com/friartech)
 
 ## License
 
 The MIT License (MIT) - see LICENSE.md for more details
-
