@@ -1,4 +1,11 @@
-# Set [![GoDoc](https://godoc.org/gopkg.in/fatih/set.v0?status.svg)](https://godoc.org/gopkg.in/fatih/set.v0) [![Build Status](https://travis-ci.org/fatih/set.svg)](https://travis-ci.org/fatih/set)
+# Archived project. No maintenance. 
+This project is not maintained anymore and is archived.. Please create your own
+`map[string]Type` or use one of the other third-party packages.  
+
+Thanks all for their work on this project. 
+
+
+# Set [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/gopkg.in/fatih/set.v0) [![Build Status](http://img.shields.io/travis/fatih/set.svg?style=flat-square)](https://travis-ci.org/fatih/set)
 
 Set is a basic and simple, hash-based, **Set** data structure implementation
 in Go (Golang).
