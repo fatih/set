@@ -5,7 +5,7 @@ This project is not maintained anymore and is archived.. Please create your own
 Thanks all for their work on this project. 
 
 
-# Set [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/gopkg.in/fatih/set.v0) [![Build Status](http://img.shields.io/travis/fatih/set.svg?style=flat-square)](https://travis-ci.org/fatih/set)
+# Set [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/fatih/set) [![Build Status](http://img.shields.io/travis/fatih/set.svg?style=flat-square)](https://travis-ci.org/fatih/set)
 
 Set is a basic and simple, hash-based, **Set** data structure implementation
 in Go (Golang).
@@ -24,13 +24,13 @@ For usage see examples below or click on the godoc badge.
 Install the package with:
 
 ```bash
-go get gopkg.in/fatih/set.v0
+go get github.com/fatih/set
 ```
 
 Import it with:
 
 ```go
-import "gopkg.in/fatih/set.v0"
+import "githug.com/fatih/set"
 ```
 
 and use `set` as the package name inside the code.
